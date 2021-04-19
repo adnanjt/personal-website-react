@@ -64,8 +64,15 @@ const decryptOptions = {
     interval: 50,
 };
 
+
+
 export const TextDecrypt = (props) => {
     const { result, dencrypt } = useDencrypt(decryptOptions);
+
+    props.propTypes = {
+        text: PropTypes.string
+        //... other props you will use in this component
+    };  
 
     useEffect(() => {
         const updateText = () => {
@@ -83,4 +90,8 @@ export const TextDecrypt = (props) => {
             {" "}
         </p>
     );
+};
+
+TextDecrypt.propTypes = {
+    text: PropTypes.string.isRequired
 };

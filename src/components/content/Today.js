@@ -2,16 +2,16 @@ import React from "react";
 import { Typography } from "@material-ui/core";
 
 export const Today = () => {
-    var date = new Date();
-    var hour = date.getHours();
-    var time = `${
+    const date = new Date();
+    const hour = date.getHours();
+    const time = `${
         (hour < 4 && "night") ||
         (hour < 12 && "morning") ||
         (hour < 18 && "afternoon") ||
         (hour < 22 && "evening") ||
         "night"
     }`;
-    var days = [
+    const days = [
         "weekend",
         "Monday",
         "Tuesday",
@@ -20,7 +20,7 @@ export const Today = () => {
         "Friday",
         "weekend",
     ];
-    var day = days[date.getDay()];
+    const day = days[date.getDay()];
 
     return (
         <Typography variant="h5" component="h2" gutterBottom>

@@ -45,7 +45,7 @@ const DisplacementSphere = (props) => {
     const sphere = useRef();
     const tweenRef = useRef();
     const sphereSpring = useRef();
-    const prefersReducedMotion = Boolean(usePrefersReducedMotion() && false); //disabled until switching themes fixed
+    const prefersReducedMotion = Boolean(usePrefersReducedMotion() && false); // disabled until switching themes fixed
     const isInViewport = useInViewport(canvasRef);
 
     useEffect(() => {
@@ -71,8 +71,8 @@ const DisplacementSphere = (props) => {
         material.current = new MeshPhongMaterial();
         material.current.onBeforeCompile = (shader) => {
             uniforms.current = UniformsUtils.merge([
-                UniformsLib["ambient"],
-                UniformsLib["lights"],
+                UniformsLib.ambient,
+                UniformsLib.lights,
                 shader.uniforms,
                 { time: { type: "f", value: 0 } },
             ]);
