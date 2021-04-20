@@ -6,8 +6,6 @@ import PropTypes from 'prop-types';
 export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-    const [theme, setTheme] = useState(getInitialMode() ? "dark" : "light");
-
     const getInitialMode = () => {
         if (typeof localStorage === "undefined") return true;
         const isReturningUser = "dark" in localStorage;
@@ -25,6 +23,7 @@ export const ThemeProvider = ({ children }) => {
         return window.matchMedia("(prefers-color-scheme: dark)").matches;
     };
 
+    const [theme, setTheme] = useState(getInitialMode() ? "dark" : "light");
 
     const toggleTheme = () => {
         if (theme === "light") {
