@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDencrypt } from "use-dencrypt-effect";
+import PropTypes from 'prop-types';
 
 const decryptOptions = {
     chars: [
@@ -68,11 +69,6 @@ const decryptOptions = {
 
 export const TextDecrypt = (props) => {
     const { result, dencrypt } = useDencrypt(decryptOptions);
-
-    props.propTypes = {
-        text: PropTypes.string
-        //... other props you will use in this component
-    };  
 
     useEffect(() => {
         const updateText = () => {
